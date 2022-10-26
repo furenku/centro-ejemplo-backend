@@ -4,11 +4,21 @@ const app = express()
 
 const moment = require("moment")
 
+const api = require("./routes/api")
+
+
+app.use( express.json() )
+
+
 app.get("/", ( req, res )=>{
 
     res.send("Raíz")
 
 })
+
+
+app.use( "/api/v1", api )
+
 
 app.get("/hola", ( req, res )=>{
     
@@ -22,6 +32,14 @@ app.get("/hora", ( req, res )=>{
 
     res.send( hora )
 
+})
+
+
+
+app.post("/hola", ( req, res )=>{
+    
+    res.send("prueba post")
+    
 })
 
 

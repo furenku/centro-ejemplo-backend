@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Prince",
+        "skills": [
+            "Guitar",
+            "Voice",
+            "Production"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Patti Smith",
+        "skills": [
+            "Writing",
+            "Singing",
+            "Visual Arts"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Zach de la Rocha",
+        "skills": [
+            "Rap",
+            "Activism"
+        ]
+    }
+]
