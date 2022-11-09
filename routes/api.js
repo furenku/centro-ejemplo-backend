@@ -4,19 +4,19 @@ const api = express.Router()
 
 const controller = require("../controllers/artists")
 
-api.get("/artistas", (req,res) => {
+api.get("/artists", (req,res) => {
     const artists = controller.findAll()
     res.send( artists )
 
 })
 
-api.get("/artistas/:id", (req,res) => {
+api.get("/artists/:id", (req,res) => {
     const id = req.params.id
     const artist = controller.findOne( id )
     res.send( artist )
 })
 
-api.post("/artistas", (req,res) => {
+api.post("/artists", (req,res) => {
 const name = req.body.name
     const newArtist = {
         name

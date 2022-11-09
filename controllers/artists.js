@@ -17,7 +17,7 @@ const createOne = artist => {
         ...artist,
         id: artists.length + 1
     }
-        artists.push( newArtist )
+    artists.push( newArtist )
     
     return newArtist
 }
