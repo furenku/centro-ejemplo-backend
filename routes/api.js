@@ -4,24 +4,24 @@ const api = express.Router()
 
 const controller = require("../controllers/artists")
 
-api.get("/artists", (req,res) => {
-    const artists = controller.findAll()
+api.get("/artists", async (req,res) => {
+    const artists = await controller.findAll()
     res.send( artists )
 
 })
 
-api.get("/artists/:id", (req,res) => {
+api.get("/artists/:id", async (req,res) => {
     const id = req.params.id
-    const artist = controller.findOne( id )
+    const artist = await controller.findOne( id )
     res.send( artist )
 })
 
-api.post("/artists", (req,res) => {
+api.post("/artists", async (req,res) => {
 const name = req.body.name
     const newArtist = {
         name
     }
-    const createdArtist = controller.createOne( newArtist )
+    const createdArtist = await controller.createOne( newArtist )
     res.send( createdArtist )
 })
 

@@ -1,10 +1,23 @@
 const express = require("express")
+const moment = require("moment")
+
+const mongoose = require("mongoose")
 
 const app = express()
 
-const moment = require("moment")
 
 const api = require("./routes/api")
+
+const MONGO_URI = "mongodb+srv://mongo:mongo@cluster0.ggzkiyc.mongodb.net/?retryWrites=true&w=majority"
+
+
+const dbConnect = async () => {
+
+    await mongoose.connect( MONGO_URI )
+    
+    console.log( "db conectada" )
+        
+}
 
 
 app.use( express.json() )
@@ -43,7 +56,9 @@ app.post("/hola", ( req, res )=>{
 })
 
 
-app.listen( 3000, ()=>{
+app.listen( 3000, async ()=>{
+
+    await dbConnect()
 
     console.log(`Aplicación escuchando en el puerto ${ 3000 }`)
 
