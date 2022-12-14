@@ -33,8 +33,41 @@ const createOne = async artist => {
 
 }
 
+
+const update = async ( id, data ) => {
+    
+    await Artist.updateOne(
+        { _id: id },
+        data
+    ) 
+
+    const updatedArtist = await Artist.findById( id )
+
+    return updatedArtist
+
+}
+
+
+const deleteOne = async ( id ) => {
+
+    await Artist.deleteOne({ _id: id })
+
+}
+
+
+const deleteMany = async () => {
+
+    await Artist.deleteMany({})
+
+}
+
+
+
 module.exports = {
     findAll,
     findOne,
-    createOne
+    createOne,
+    update,
+    deleteOne,
+    deleteMany
 }

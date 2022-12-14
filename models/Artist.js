@@ -4,7 +4,9 @@ const { Schema } = mongoose
 
 const artistSchema = new Schema({
 
-    name: String
+    name: String,
+
+    image: String
 
 })
 

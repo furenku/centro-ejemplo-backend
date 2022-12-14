@@ -1,10 +1,14 @@
 const express = require("express")
+
+const cors = require("cors")
+
 const moment = require("moment")
 
 const mongoose = require("mongoose")
 
 const app = express()
 
+app.use( cors() )
 
 const api = require("./routes/api")
 
